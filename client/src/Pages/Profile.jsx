@@ -9,11 +9,6 @@ import {
 } from "firebase/storage";
 import { app } from "../firebase";
 import { useDispatch } from "react-redux";
-// import {
-//   updateUserStart,
-//   updateUserFailure,
-//   updateUserSuccess,
-// } from "../redux/user/userSlice";
 import {
   updateUserFailure,
   updateUserSuccess,
@@ -25,6 +20,7 @@ import {
   signOutUserFailure,
   signOutUserSuccess,
 } from "../redux/user/userSlice.js";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   // firebase storage
@@ -185,6 +181,12 @@ export default function Profile() {
         >
           {loading ? "Loading..." : "Update"}
         </button>
+        <Link
+          to={"/create-listing"}
+          className="bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95"
+        >
+          Create Listing
+        </Link>
       </form>
       <div className="flex justify-between mt-5">
         <span
